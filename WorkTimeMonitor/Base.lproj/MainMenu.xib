@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="WorkTimeMonitor" customModuleProvider="target"/>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="iLi-FM-ul0" customClass="MainController" customModule="WorkTimeMonitor" customModuleProvider="target">
+            <connections>
+                <outlet property="statusItemMenu" destination="nzU-z3-Et7" id="qm6-wl-JNW"/>
+                <outlet property="statusItemView" destination="kI5-5b-avf" id="MRf-By-yjR"/>
+            </connections>
+        </customObject>
+        <menu autoenablesItems="NO" id="nzU-z3-Et7" userLabel="StatusItemMenu" customClass="StatusItemMenu" customModule="WorkTimeMonitor" customModuleProvider="target">
+            <items>
+                <menuItem title="Start" id="y2W-2g-HaI" userLabel="Toggle Menu Item">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="toggleMonitoringAction:" target="iLi-FM-ul0" id="6an-Qx-8VP"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Stop" enabled="NO" id="d3q-Jd-7hM" userLabel="Stop Menu Item">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Stop" enabled="NO" id="zBA-6g-0ya">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Stop" id="gek-iR-K6b">
+                        <items>
+                            <menuItem title="30 minutes" enabled="NO" id="85G-ze-cx0">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="stopMonitoringActionFor30Min:" target="iLi-FM-ul0" id="oKE-hd-N3p"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="1 hour" enabled="NO" id="D7W-P5-34R">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="stopMonitoringActionFor1Hour:" target="iLi-FM-ul0" id="8Qs-q7-iiU"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="2 hours" enabled="NO" id="PzG-ih-zRn">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="stopMonitoringActionFor2Hours:" target="iLi-FM-ul0" id="FJ6-75-Ios"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="3 hours" enabled="NO" id="93d-Mc-8Qm">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="stopMonitoringActionFor3Hours:" target="iLi-FM-ul0" id="J5I-Ho-Lsv"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="6 hours" enabled="NO" id="bkY-YC-UGl">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="stopMonitoringActionFor6Hours:" target="iLi-FM-ul0" id="ojO-tQ-OoJ"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="12 hours" enabled="NO" id="bI9-Yo-lES">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="stopMonitoringActionFor12Hours:" target="iLi-FM-ul0" id="fVm-Td-2he"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Restart" enabled="NO" id="stO-rO-OUt" userLabel="Restart Menu Item">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="restartMonitoringAction:" target="iLi-FM-ul0" id="DSk-xE-VcN"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Postpone" enabled="NO" id="a91-Q0-JR6" userLabel="Postpone Menu Item">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="postponeAction:" target="iLi-FM-ul0" id="JjR-Vb-WoD"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="zBI-Du-Vaj"/>
+                <menuItem title="Preferences" id="Izv-ri-CrZ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="openPreferencesAction:" target="iLi-FM-ul0" id="vH6-pl-J5v"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="vGH-5q-tYz"/>
+                <menuItem title="Quit" id="02e-Ox-sse">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="quitAction:" target="iLi-FM-ul0" id="pEL-0v-mb4"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <connections>
+                <outlet property="delegate" destination="iLi-FM-ul0" id="7Kl-l9-3H8"/>
+                <outlet property="postponeAppStateMenuItem" destination="a91-Q0-JR6" id="OiK-QH-j2t"/>
+                <outlet property="restartAppStateMenuItem" destination="stO-rO-OUt" id="IDX-YF-Rxs"/>
+                <outlet property="stopAppStateMenu" destination="zBA-6g-0ya" id="ODV-oQ-V8j"/>
+                <outlet property="stopAppStateMenuItem" destination="zBA-6g-0ya" id="UeB-CS-41c"/>
+                <outlet property="toggleAppStateMenuItem" destination="y2W-2g-HaI" id="rdM-A4-RUL"/>
+            </connections>
+            <point key="canvasLocation" x="-18" y="76"/>
+        </menu>
+        <customView autoresizesSubviews="NO" id="kI5-5b-avf" userLabel="StatusItemView" customClass="StatusItemView" customModule="WorkTimeMonitor" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="65" height="22"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Esa-Vs-GlS">
+                    <rect key="frame" x="0.0" y="2" width="41" height="18"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="00:00" id="VJd-zt-wkH">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g3U-qg-PcF">
+                    <rect key="frame" x="42" y="0.0" width="22" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Dct-iq-0QB" userLabel="Status Icon"/>
+                </imageView>
+            </subviews>
+            <connections>
+                <outlet property="icon" destination="g3U-qg-PcF" id="JxD-Fa-Nym"/>
+                <outlet property="postponeAppStateMenuItem" destination="a91-Q0-JR6" id="l2k-0Y-b1L"/>
+                <outlet property="timer" destination="Esa-Vs-GlS" id="fiw-bm-JHA"/>
+            </connections>
+            <point key="canvasLocation" x="-17.5" y="-46"/>
+        </customView>
+    </objects>
+</document>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Rq3-yU-kCr">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="jN7-Yr-dKp">
+            <objects>
+                <windowController id="Rq3-yU-kCr" sceneMemberID="viewController">
+                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="SHh-Xn-6Hc">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="338" height="237"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                        <connections>
+                            <outlet property="delegate" destination="Rq3-yU-kCr" id="dsv-SP-k4C"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="P9K-XR-4t4" kind="relationship" relationship="window.shadowedContentViewController" id="bBy-5h-RmD"/>
+                    </connections>
+                </windowController>
+                <customObject id="OPW-5J-gBA" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-153" y="120.5"/>
+        </scene>
+        <!--Preferences View Controller-->
+        <scene sceneID="se7-pr-mU9">
+            <objects>
+                <viewController id="P9K-XR-4t4" customClass="PreferencesViewController" customModule="WorkTimeMonitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="ifn-Gg-GR9">
+                        <rect key="frame" x="0.0" y="0.0" width="626" height="308"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vS5-CJ-gnA">
+                                <rect key="frame" x="18" y="271" width="307" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Focus time:" id="E6s-Z2-geI">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QUj-nP-8dQ">
+                                <rect key="frame" x="18" y="173" width="385" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Focusing time:" id="jbh-ER-ncR">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wzx-hd-p09">
+                                <rect key="frame" x="18" y="246" width="517" height="19"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <sliderCell key="cell" state="on" alignment="left" minValue="5" maxValue="90" doubleValue="25" tickMarkPosition="above" sliderType="linear" id="N3G-2F-pgm"/>
+                                <connections>
+                                    <action selector="workTimeSliderChangeAction:" target="P9K-XR-4t4" id="ny9-MQ-I0h"/>
+                                </connections>
+                            </slider>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AdL-nU-Neb">
+                                <rect key="frame" x="539" y="248" width="40" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="25:00" id="how-3g-2Nq">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZFX-pl-f2b">
+                                <rect key="frame" x="18" y="196" width="517" height="19"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="60" doubleValue="5" tickMarkPosition="above" sliderType="linear" id="CL0-Bo-Gai"/>
+                                <connections>
+                                    <action selector="walkTimeSliderChangeAction:" target="P9K-XR-4t4" id="L2U-xx-ebn"/>
+                                </connections>
+                            </slider>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UJn-hg-ppx">
+                                <rect key="frame" x="539" y="198" width="41" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="05:00" id="arb-7A-OPW">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9G1-fb-1hH">
+                                <rect key="frame" x="18" y="223" width="307" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Rest time:" id="C9g-l3-1px">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ew8-sE-dNb">
+                                <rect key="frame" x="18" y="150" width="517" height="19"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="60" doubleValue="15" tickMarkPosition="above" sliderType="linear" id="Pdb-wv-P2k"/>
+                                <connections>
+                                    <action selector="focusTimeSliderChangeAction:" target="P9K-XR-4t4" id="LDQ-dT-VkL"/>
+                                </connections>
+                            </slider>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o0t-Qq-vyc">
+                                <rect key="frame" x="539" y="151" width="40" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="00:15" id="Dqg-Oh-lIr">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UdQ-al-iF4">
+                                <rect key="frame" x="18" y="79" width="264" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Play end-of-focus-time sound smoothly" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="NcC-So-CXJ">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="startPlayAudioSmoothlyCheckboxChangeAction:" target="P9K-XR-4t4" id="IcF-Vy-hvM"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4br-Rq-VN9">
+                                <rect key="frame" x="18" y="59" width="416" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Send notifications" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="EJs-Tn-7tF">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="sendEndOfWorkNotificationCheckboxChangeAction:" target="P9K-XR-4t4" id="WRj-G7-vN4"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Lv-YW-Q22">
+                                <rect key="frame" x="18" y="126" width="307" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Sound level:" id="EEU-2Z-JV9">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hXr-dE-Yws">
+                                <rect key="frame" x="18" y="101" width="517" height="19"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="TTD-F9-CDd"/>
+                                <connections>
+                                    <action selector="maxAudioVolumeSliderChangeAction:" target="P9K-XR-4t4" id="NzB-Xu-zKH"/>
+                                </connections>
+                            </slider>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EMR-14-yQW">
+                                <rect key="frame" x="539" y="102" width="40" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="50%" id="Aab-OW-6Ix">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pge-Cr-1QU">
+                                <rect key="frame" x="14" y="13" width="143" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Reset to defaults" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Z1I-Uc-oMw">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="resetToDefaultsAction:" target="P9K-XR-4t4" id="amO-gs-hY7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="focusTimeSlider" destination="Ew8-sE-dNb" id="grm-f4-mCO"/>
+                        <outlet property="focusTimeSliderLabel" destination="o0t-Qq-vyc" id="NYk-R6-wS0"/>
+                        <outlet property="maxAudioVolumeSlider" destination="hXr-dE-Yws" id="pI1-Tc-urg"/>
+                        <outlet property="maxAudioVolumeSliderLabel" destination="EMR-14-yQW" id="D5b-xN-aP7"/>
+                        <outlet property="sendEndOfWorkNotificationCheckbox" destination="4br-Rq-VN9" id="UIb-Un-mEg"/>
+                        <outlet property="startPlayAudioSmoothlyCheckbox" destination="UdQ-al-iF4" id="KaR-Up-ZAS"/>
+                        <outlet property="walkTimeSlider" destination="ZFX-pl-f2b" id="3Ir-TX-lgW"/>
+                        <outlet property="walkTimeSliderLabel" destination="UJn-hg-ppx" id="Kea-ZL-I8S"/>
+                        <outlet property="workTimeSlider" destination="wzx-hd-p09" id="aRI-y9-0Ex"/>
+                        <outlet property="workTimeSliderLabel" destination="AdL-nU-Neb" id="ttY-80-KEX"/>
+                    </connections>
+                </viewController>
+                <customObject id="puT-bW-6uu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="xSh-qX-mqy"/>
+            </objects>
+            <point key="canvasLocation" x="-138" y="588"/>
+        </scene>
+    </scenes>
+</document>
